@@ -9,8 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using NHolbrook_c969_Software_2;
+using System.Diagnostics;
+using System.Data.SqlClient;
 namespace NHolbrook_c969_Software_2
+
 {
     public partial class Login : Form
     {
@@ -19,19 +22,21 @@ namespace NHolbrook_c969_Software_2
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-           
-            
-        }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            string sql = "SELECT * FROM client_schedule.user";
+            DBConnector.pollDB(sql);
+            //this might be a place to use a lambda
+            
+
+           
+
+        }
     }
 }
-
-    
-
-

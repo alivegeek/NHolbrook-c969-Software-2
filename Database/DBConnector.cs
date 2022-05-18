@@ -7,35 +7,53 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace NHolbrook_c969_Software_2
 {
     class DBConnector
     {
-        public static SqlConnection conn { get; set; }
+        public static MySqlConnection conn { get; set; }
+        //public static SqlDataReader ExecuteSqlCommand {get; set;}
 
         public static void startConnection()
         {
-            try {
-                string conStr = ConfigurationManager.ConnectionStrings["localdb"].ConnectionString;
-            }
-            catch (MySqlException ex)
+            string connStr = "server=localhost;user=sqlUser;database=client_schedule;port=3306;password=Passw0rd!";
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
             {
-                MessageBox.Show(ex.Message);    
-            }
-            finally
-            {
-                if (conn != null)
+                Console.WriteLine("Connecting to MySQL...");
+                conn.Open();
+                Console.WriteLine("Opening DB connection. Is now " + conn.State);
+//                string sql = "SELECT * FROM client_schedule.user";
 
-                    conn.Close();
-                conn = null;
+             //   MySqlCommand cmd = new MySqlCommand(sql);
+             //   MySqlDataReader rdr = cmd.ExecuteReader();
+
             }
+            catch(Exception ex){ MessageBox.Show(ex.ToString()); }
+
 
         }
-
-        public static void closeConnection()
+        public static void pollDB(String sql)
         {
+            Debug.WriteLine(conn.State);
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
 
+            while (rdr.Read())
+            {
+                Console.WriteLine(rdr[0] + " -- " + rdr[1]);
+            }
+            rdr.Close();
         }
+            public static void closeConnection()
+        {
+            return;
+           // conn.Close();
+        }
+
+        // Function to execute select statements
+    
     }
 }

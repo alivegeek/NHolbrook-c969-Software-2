@@ -1,7 +1,7 @@
 ﻿
 namespace NHolbrook_c969_Software_2
 {
-    partial class Login
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -109,9 +109,8 @@ namespace NHolbrook_c969_Software_2
             this.loginButton.TabIndex = 10;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
-            // Login
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -124,7 +123,7 @@ namespace NHolbrook_c969_Software_2
             this.Controls.Add(this.userNameLabel);
             this.Controls.Add(this.titleLabel);
             this.Margin = new System.Windows.Forms.Padding(1);
-            this.Name = "Login";
+            this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
