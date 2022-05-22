@@ -18,10 +18,27 @@ namespace NHolbrook_c969_Software_2
 {
     public partial class Login : Form
     {
+        private string alertUserName;
+
         public Login()
         {
             InitializeComponent();
             passwordTextBox.PasswordChar = '*';
+
+            //get locals from OS
+           int locale = CultureInfo.CurrentUICulture.LCID; //returns a locale identifier LCID 1033 is En US 21514 is Spanish US
+
+            String alertUserName = "User Name Not Found.";
+            String alertPassword = "Incorrect Password";
+            if (locale == 21514)
+            {
+                titleLabel.Text = "Autenticación";
+                userNameLabel.Text = "Usuario";
+                passwordLabel.Text = "Contraseña";
+                alertUserName = "Nombre de usuario no encontrado";
+                alertPassword = "Contraseña incorrecta";
+            }
+            
 
         }
 
@@ -33,8 +50,7 @@ namespace NHolbrook_c969_Software_2
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            //get locals from OS
-            Debug.WriteLine(CultureInfo.CurrentUICulture.LCID); //returns a locale identifier LCID 1033 is En US 21514 is Spanish US
+           
 
             //this might be a place to use a lambda
             String submittedUsername = usernameTextBox.Text;
@@ -62,7 +78,7 @@ namespace NHolbrook_c969_Software_2
             {
                // Debug.WriteLine(DBResult.GetValue();
 
-                MessageBox.Show("USERNAME NOT FOUND");
+                MessageBox.Show(alertUserName);
 
             }
             //nested if else to check that username exists and if password is correct
