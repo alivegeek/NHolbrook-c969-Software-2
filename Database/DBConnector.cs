@@ -11,19 +11,22 @@ using System.Diagnostics;
 
 namespace NHolbrook_c969_Software_2
 {
+
     class DBConnector
     {
+        static string connStr = "server=localhost;user=sqlUser;database=client_schedule;port=3306;password=Passw0rd!";
+
         public static MySqlConnection conn { get; set; }
         //public static SqlDataReader ExecuteSqlCommand {get; set;}
 
         public static void startConnection()
         {
-            string connStr = "server=localhost;user=sqlUser;database=client_schedule;port=3306;password=Passw0rd!";
-            MySqlConnection conn = new MySqlConnection(connStr);
+           // string connStr = "server=localhost;user=sqlUser;database=client_schedule;port=3306;password=Passw0rd!";
+            MySqlConnection conn = new MySqlConnection(connStr) ;
             try
             {
                 Console.WriteLine("Connecting to MySQL...");
-                conn.Open();
+                conn.Open() ;
                 Console.WriteLine("Opening DB connection. Is now " + conn.State);
 //                string sql = "SELECT * FROM client_schedule.user";
 
@@ -35,17 +38,19 @@ namespace NHolbrook_c969_Software_2
 
 
         }
-        public static void pollDB(String sql)
+        public static MySqlDataReader pollDB(String sql)
         {
-            Debug.WriteLine(conn.State);
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            while (rdr.Read())
-            {
-                Console.WriteLine(rdr[0] + " -- " + rdr[1]);
-            }
-            rdr.Close();
+            MySqlConnection conn = new MySqlConnection(connStr)
+            
+                ;
+                conn.Open();
+                Debug.WriteLine(conn.State);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                MySqlDataReader requestedData = rdr;
+                //rdr.Close();
+                return requestedData;
+            
         }
             public static void closeConnection()
         {
