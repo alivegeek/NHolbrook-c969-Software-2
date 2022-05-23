@@ -42,10 +42,10 @@ namespace NHolbrook_c969_Software_2
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.titleLabel.Location = new System.Drawing.Point(40, 37);
-            this.titleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.titleLabel.Location = new System.Drawing.Point(20, 19);
+            this.titleLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(262, 44);
+            this.titleLabel.Size = new System.Drawing.Size(129, 24);
             this.titleLabel.TabIndex = 2;
             this.titleLabel.Text = "Authentication";
             // 
@@ -53,30 +53,30 @@ namespace NHolbrook_c969_Software_2
             // 
             this.userNameLabel.AutoSize = true;
             this.userNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.userNameLabel.Location = new System.Drawing.Point(40, 254);
-            this.userNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.userNameLabel.Location = new System.Drawing.Point(20, 132);
+            this.userNameLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.userNameLabel.Name = "userNameLabel";
-            this.userNameLabel.Size = new System.Drawing.Size(207, 44);
+            this.userNameLabel.Size = new System.Drawing.Size(102, 24);
             this.userNameLabel.TabIndex = 3;
             this.userNameLabel.Text = "Username:";
             // 
             // usernameTextBox
             // 
             this.usernameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.usernameTextBox.Location = new System.Drawing.Point(234, 258);
-            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.usernameTextBox.Location = new System.Drawing.Point(117, 134);
+            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(372, 44);
+            this.usernameTextBox.Size = new System.Drawing.Size(188, 26);
             this.usernameTextBox.TabIndex = 5;
             this.usernameTextBox.Text = "test";
             this.usernameTextBox.TextChanged += new System.EventHandler(this.usernameTextBox_TextChanged);
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(436, 467);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.exitButton.Location = new System.Drawing.Point(218, 243);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(170, 52);
+            this.exitButton.Size = new System.Drawing.Size(85, 27);
             this.exitButton.TabIndex = 7;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
@@ -85,29 +85,31 @@ namespace NHolbrook_c969_Software_2
             // passwordTextBox
             // 
             this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.passwordTextBox.Location = new System.Drawing.Point(234, 354);
-            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passwordTextBox.Location = new System.Drawing.Point(117, 184);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(372, 44);
+            this.passwordTextBox.PasswordChar = '*';
+            this.passwordTextBox.Size = new System.Drawing.Size(188, 26);
             this.passwordTextBox.TabIndex = 8;
+            this.passwordTextBox.Text = "test";
             // 
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.passwordLabel.Location = new System.Drawing.Point(40, 354);
-            this.passwordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.passwordLabel.Location = new System.Drawing.Point(20, 184);
+            this.passwordLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(197, 44);
+            this.passwordLabel.Size = new System.Drawing.Size(97, 24);
             this.passwordLabel.TabIndex = 9;
             this.passwordLabel.Text = "Password:";
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(234, 467);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginButton.Location = new System.Drawing.Point(117, 243);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(170, 52);
+            this.loginButton.Size = new System.Drawing.Size(85, 27);
             this.loginButton.TabIndex = 10;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
@@ -115,9 +117,9 @@ namespace NHolbrook_c969_Software_2
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(644, 575);
+            this.ClientSize = new System.Drawing.Size(322, 299);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.passwordTextBox);
@@ -125,7 +127,7 @@ namespace NHolbrook_c969_Software_2
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.userNameLabel);
             this.Controls.Add(this.titleLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "Login";
             this.Text = "Form1";
             this.ResumeLayout(false);

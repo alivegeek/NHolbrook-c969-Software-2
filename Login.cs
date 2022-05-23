@@ -68,7 +68,12 @@ namespace NHolbrook_c969_Software_2
                 DBResult = DBConnector.pollDB(sql);
                 if (DBResult.HasRows)
                 {
-                    MessageBox.Show("Login Successful");
+//                    MessageBox.Show("Login Successful");
+                    Main main = new Main();
+                    main.Show();
+                  //  this.Close();
+                   
+                    
                 } else
                 {
                     MessageBox.Show("Incorrect Password");

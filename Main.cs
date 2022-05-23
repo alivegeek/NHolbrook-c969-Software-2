@@ -16,5 +16,30 @@ namespace NHolbrook_c969_Software_2
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonTest_Click(object sender, EventArgs e)
+        {
+            Customer customer = new Customer();
+        }
     }
 }
