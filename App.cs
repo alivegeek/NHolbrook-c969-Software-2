@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using NHolbrook_c969_Software_2;
-
+using System.Data.SqlClient;
 namespace NHolbrook_c969_Software_2
 {
     public class App
@@ -15,7 +15,7 @@ namespace NHolbrook_c969_Software_2
 
 
         public static BindingList<Customer> allCustomers = new BindingList<Customer>();
-        //public BindingSource source = new BindingSource(allCustomers, null);
+      //  public BindingSource source = new BindingSource(allCustomers, null);
         public static BindingList<Appointments> allAppts = new BindingList<Appointments>();
 
 
@@ -33,19 +33,20 @@ namespace NHolbrook_c969_Software_2
         public static void LoadAppointments()
         {
             //set SQL query to be passed to DB
-            String sql = "SELECT * FROM client_schedule.appointment;";
+            String sql = "SELECT * FROM client_schedule.appointment;"; // toDo replace * with specifics
 
             //Execute DB query
             MySqlDataReader DBResult = DBConnector.pollDB(sql);
+            DBResult.Read();
 
             // for each row call the constructor above to create a custoemr object
             if (DBResult.HasRows)
             {
-                DBResult.Read();
+            //    DBResult.Read();
                 foreach (var x in DBResult)
                 {
+                    //new customer object
                     Appointments appt = new Appointments();
-                    //do stuff
                     //read data and populate Class vars 
                     appt.AppointmentID = Convert.ToInt32(DBResult[0]);
                     appt.CustomerId = Convert.ToInt32(DBResult[1]);
@@ -65,9 +66,9 @@ namespace NHolbrook_c969_Software_2
 
                     // Add new customer object to the list of customers for DGV
                     App.AddAppointment(appt);
+                    
                 }
 
-                // Debug.WriteLine("TESTING CUSTOMER CLASS CONSTRUX" + DBResult[0].ToString()); //future me, for loop to print it all DBResult[0].ToString // Nevermind future me jsut do Title = DBResult[4] etc
 
             }
         }

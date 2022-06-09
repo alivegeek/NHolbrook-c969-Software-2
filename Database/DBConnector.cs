@@ -45,7 +45,7 @@ namespace NHolbrook_c969_Software_2
             
                 ;
                 conn.Open();
-                Debug.WriteLine(conn.State);
+              //  Debug.WriteLine(conn.State);
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 MySqlDataReader requestedData = rdr;

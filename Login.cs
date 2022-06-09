@@ -26,22 +26,8 @@ namespace NHolbrook_c969_Software_2
             passwordTextBox.PasswordChar = '*';
 
             //get locals from OS
-           int locale = CultureInfo.CurrentUICulture.LCID; //returns a locale identifier LCID 1033 is En US 21514 is Spanish US
-
-            String alertUserName = "User Name Not Found.";
-            String alertPassword = "Incorrect Password";
-            if (locale == 21514)
-            {
-                titleLabel.Text = "Autenticación";
-                userNameLabel.Text = "Usuario";
-                passwordLabel.Text = "Contraseña";
-                alertUserName = "Nombre de usuario no encontrado";
-                alertPassword = "Contraseña incorrecta";
-            }
-            
 
         }
-
 
         private void exitButton_Click(object sender, EventArgs e)
         {
@@ -96,6 +82,27 @@ namespace NHolbrook_c969_Software_2
 
         private void usernameTextBox_TextChanged(object sender, EventArgs e)
         {
+
+        }
+       //cultureinfo.currentculture.twoletterisolanguagename
+        public void Login_Load(object sender, EventArgs e)
+        {
+                int locale = CultureInfo.CurrentUICulture.LCID; //returns a locale identifier LCID 1033 is En US 21514 is Spanish US
+                Debug.WriteLine("System Locale is " + locale);
+                String alertUserName = "User Name Not Found.";
+                String alertPassword = "Incorrect Password";
+                //if (locale == 21514)
+                if (CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "es")
+                {
+                    titleLabel.Text = "Autenticación";
+                    userNameLabel.Text = "Usuario";
+                    passwordLabel.Text = "Contraseña";
+                    alertUserName = "Nombre de usuario no encontrado";
+                    alertPassword = "Contraseña incorrecta";
+                }
+
+
+
 
         }
     }

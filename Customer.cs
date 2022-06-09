@@ -1,31 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NHolbrook_c969_Software_2;
-using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using System.Diagnostics;
 namespace NHolbrook_c969_Software_2
 {
-   public class Customer
+    public class Customer
     {
         int AppointmentID { get; set; }
         public int CustomerID { get; set; }
-        int UserID { get; set; }
-        String Title { get; set; }
-        String Description { get; set; }
-        String Location { get; set; }
-        String Contact { get; set; }
-        String type { get; set; }
-        String URL { get; set; }
-        DateTime Start { get; set; }
-        DateTime End { get; set; }
-        
+
+
         public String CustomerName { get; set; }
         int AddressID { get; set; }
-        
+
         Boolean Active { get; set; }
         DateTime CreateDate { get; set; }
         String CreatedBy { get; set; }
@@ -33,18 +19,12 @@ namespace NHolbrook_c969_Software_2
         String LastUpdatedBy { get; set; }
 
         //contructor
-        public Customer(int customerID, int userID, string title, string description, string location, string contact, string type2, string url, DateTime start, DateTime end, DateTime createDate, String createdBy, DateTime lastUpdate, String lastUpdatedBy) 
-        {
+        public Customer(int customerID, string customerName, int addressID, bool active, DateTime createDate, string createdBy, DateTime lastUpdate, string lastUpdatedBy){
+
             CustomerID = customerID;
-            UserID = userID;
-            Title = title;
-            Description = description;
-            Location = Location;
-            Contact = Contact;
-            type = type2;
-            URL = url;
-            Start = start;
-            End = end;
+            CustomerName = customerName;
+            AddressID = addressID;
+            Active = active;
             CreateDate = createDate;
             CreatedBy = createdBy;
             LastUpdate = lastUpdate;
@@ -62,39 +42,86 @@ namespace NHolbrook_c969_Software_2
         {
 
             //set SQL query to be passed to DB
+            //String sql = "SELECT customerId, customerName, addressId, active, createDate, createdBy, lastUpdate, lastUpdateBy FROM client_schedule.customer;";
             String sql = "SELECT * FROM client_schedule.customer;";
 
             //Execute DB query
             MySqlDataReader DBResult = DBConnector.pollDB(sql);
 
+            //debugging - how many rows did the DM return?
+            int RowCount = 0;
+            Debug.WriteLine("Counting Rows returned from Database");
+            //while (DBResult.Read())
+            //{
+            //    RowCount++;
+            //    Debug.WriteLine(RowCount);
+            //}
+            Debug.WriteLine("End counting rows \n");
             // for each row call the constructor above to create a custoemr object
-            if (DBResult.HasRows)
+            //test
+            while (DBResult.Read())
             {
-                DBResult.Read();
-                foreach( var x in DBResult) {
-                    //do stuff
-                    Customer customer = new Customer();
-                    //read data and populate Class vars 
-                    customer.CustomerID = Convert.ToInt32(DBResult[0]);
-                    customer.CustomerName = DBResult[1].ToString();
-                    customer.AddressID = Convert.ToInt32(DBResult[2]);
-                    customer.Active = Convert.ToBoolean(DBResult[3]);
-                    customer.CreateDate = Convert.ToDateTime(DBResult[4]);
-                    customer.CreatedBy = DBResult[5].ToString();
-                    customer.LastUpdate = Convert.ToDateTime(DBResult[6]);
-                    customer.LastUpdatedBy = DBResult[7].ToString();
+                Debug.WriteLine("printing customers names to debug console");
+                Debug.WriteLine(DBResult[1].ToString());
+                Debug.WriteLine("customer ID # " + DBResult[0].ToString());//custID
 
-                    // Add new customer object to the list of customers for DGV
-                    App.AddCustomer(customer);
-                }
-
-               // Debug.WriteLine("TESTING CUSTOMER CLASS CONSTRUX" + DBResult[0].ToString()); //future me, for loop to print it all DBResult[0].ToString // Nevermind future me jsut do Title = DBResult[4] etc
+                //read data and populate Class vars 
+                int customerID = Convert.ToInt32(DBResult[0]);
+                string customerName = DBResult[1].ToString();
+                int addressID = Convert.ToInt32(DBResult[2]);
+                bool active = Convert.ToBoolean(DBResult[3]);
+                DateTime createDate = Convert.ToDateTime(DBResult[4]);
+                string createdBy = DBResult[5].ToString();
+                DateTime lastUpdate = Convert.ToDateTime(DBResult[6]);
+                string lastUpdatedBy = DBResult[7].ToString();
+                Customer customer = new Customer(customerID, customerName, addressID, active, createDate,createdBy,lastUpdate,lastUpdatedBy);
+                //Customer customer = new Customer();
+                // Add new customer object to the list of customers for DGV
+                App.AddCustomer(customer);
+                DBConnector.closeConnection();
 
             }
 
 
+            // if (DBResult.HasRows)
+            //{
+            //foreach (MySqlDataReader x in DBResult)
+            //    {
 
+            //        //do stuff
+            //        // debugging - is anything coming in null? 
+            //        //if(DBResult[1] is null){
+            //        //    Debug.WriteLine("This line is null");
+            //        //}
+            //        //print the customer name to debug console
+            //        Debug.WriteLine("printing customers names to debug console");
+            //        Debug.WriteLine(DBResult[1].ToString());
+            //        Debug.WriteLine(DBResult[0].ToString());//custID
+
+            //        //read data and populate Class vars 
+            //        int customerID = Convert.ToInt32(DBResult[0]);
+            //        string customerName = DBResult[1].ToString();
+            //        int addressID = Convert.ToInt32(DBResult[2]);
+            //        bool active = Convert.ToBoolean(DBResult[3]);
+            //        DateTime createDate = Convert.ToDateTime(DBResult[4]);
+            //        string createdBy = DBResult[5].ToString();
+            //        DateTime lastUpdate = Convert.ToDateTime(DBResult[6]);
+            //        string lastUpdatedBy = DBResult[7].ToString();
+            //        //  Customer customer = new Customer(customerID, customerName, addressID, active, createDate,createdBy,lastUpdate,lastUpdatedBy);
+            //        Customer customer = new Customer();
+            //        // Add new customer object to the list of customers for DGV
+            //        App.AddCustomer(customer);
+            //    }
+
+            //}
+
+            // Debug.WriteLine("TESTING CUSTOMER CLASS " + DBResult[0].ToString()); //future me, for loop to print it all DBResult[0].ToString // Nevermind future me jsut do Title = DBResult[4] etc
 
         }
+
+
+
+
+        
     }
 }
