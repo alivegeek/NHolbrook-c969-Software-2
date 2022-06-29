@@ -1,0 +1,12 @@
+﻿Need function so that all fields can be completed. 
+
+Need functions for Address ID
+
+
+6-22 left off with function to populate countries in addCustomerdrop down. Need to use the newly created dict to populate the form.
+
+
+6-23 lef tof on app.cs like 150
+
+
+//to do, add logic for getting city ID or adding city to database.  Check the rubric here, maybe users cant add city just pick one?

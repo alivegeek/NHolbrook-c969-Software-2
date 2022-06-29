@@ -12,13 +12,25 @@ namespace NHolbrook_c969_Software_2
         public String CustomerName { get; set; }
         int AddressID { get; set; }
 
-        Boolean Active { get; set; }
+        public Boolean Active { get; set; }
         DateTime CreateDate { get; set; }
         String CreatedBy { get; set; }
         public DateTime LastUpdate { get; set; }
         String LastUpdatedBy { get; set; }
 
-        //contructor
+        public string Address1 { get; set; }
+
+        public string Address2 { get; set; }
+
+        public string City { get; set; }
+
+        public int Zip { get; set; }
+
+        public string Country { get; set; }
+
+        public string Phone { get; set; }
+
+        //contructor/s
         public Customer(int customerID, string customerName, int addressID, bool active, DateTime createDate, string createdBy, DateTime lastUpdate, string lastUpdatedBy){
 
             CustomerID = customerID;
@@ -32,7 +44,36 @@ namespace NHolbrook_c969_Software_2
 
 
         }
+        public Customer(string customerName, string address1, string address2, string city, int zipcode, string country, bool active, DateTime createDate, string createdBy, DateTime lastUpdate, string lastUpdatedBy)
+        {
 
+            CustomerName = customerName;
+            Address1 = address1;
+            Address2 = address2;
+            City = city;
+            Zip = Zip;
+            Country = country;
+            Active = active;
+            CreateDate = createDate;
+            CreatedBy = createdBy;
+            LastUpdate = lastUpdate;
+            LastUpdatedBy = lastUpdatedBy;
+
+
+        }
+        public Customer(string customerName, int addressID, bool active, DateTime createDate, string createdBy, DateTime lastUpdate, string lastUpdatedBy)
+        {
+
+            CustomerName = customerName;
+            AddressID = addressID;
+            Active = active;
+            CreateDate = createDate;
+            CreatedBy = createdBy;
+            LastUpdate = lastUpdate;
+            LastUpdatedBy = lastUpdatedBy;
+
+
+        }
         public Customer()
         {
 
@@ -40,6 +81,7 @@ namespace NHolbrook_c969_Software_2
         //populate from db
         public static void InitFromDB()
         {
+
 
             //set SQL query to be passed to DB
             //String sql = "SELECT customerId, customerName, addressId, active, createDate, createdBy, lastUpdate, lastUpdateBy FROM client_schedule.customer;";
@@ -59,6 +101,9 @@ namespace NHolbrook_c969_Software_2
             Debug.WriteLine("End counting rows \n");
             // for each row call the constructor above to create a custoemr object
             //test
+
+
+
             while (DBResult.Read())
             {
                 Debug.WriteLine("printing customers names to debug console");

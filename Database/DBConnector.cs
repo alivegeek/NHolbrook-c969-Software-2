@@ -37,8 +37,29 @@ namespace NHolbrook_c969_Software_2
             }
             catch(Exception ex){ MessageBox.Show(ex.ToString()); }
 
+        
+        }
+
+        public static MySqlConnection NewSqlConnection()
+        {
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                Console.WriteLine("Connecting to MySQL...");
+                conn.Open();
+                Console.WriteLine("Opening DB connection. Is now " + conn.State);
+                //                string sql = "SELECT * FROM client_schedule.user";
+
+                //   MySqlCommand cmd = new MySqlCommand(sql);
+                //   MySqlDataReader rdr = cmd.ExecuteReader();
+                return conn;
+
+            }
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); }
+            return null;
 
         }
+    
         public static MySqlDataReader pollDB(String sql)
         {
             MySqlConnection conn = new MySqlConnection(connStr)
@@ -59,7 +80,18 @@ namespace NHolbrook_c969_Software_2
            // conn.Close();
         }
 
+        public static void ExecuteSQL(String sql) //try some exception handling here
+        {
+            MySqlConnection conn = new MySqlConnection(connStr);
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.ExecuteReader();
+            conn.Close();
+
+        }
+
+
         // Function to execute select statements
-    
+
     }
 }

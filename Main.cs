@@ -49,5 +49,12 @@ namespace NHolbrook_c969_Software_2
        
         }
 
+        private void buttonAddCust_Click(object sender, EventArgs e)
+        {
+            // create Addcustomer form and show
+            AddCustomer ac = new AddCustomer();
+            ac.Show();
+
+        }
     }
 }

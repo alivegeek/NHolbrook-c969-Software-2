@@ -25,7 +25,10 @@ namespace NHolbrook_c969_Software_2
             InitializeComponent();
             passwordTextBox.PasswordChar = '*';
 
-            //get locals from OS
+            //locale setup
+           
+            int locale = CultureInfo.CurrentUICulture.LCID; //returns a locale identifier LCID 1033 is En US 21514 is Spanish US
+
 
         }
 
@@ -45,7 +48,6 @@ namespace NHolbrook_c969_Software_2
             String sql = $"SELECT * FROM client_schedule.user WHERE userName ='{submittedUsername}'; "; //This should be treated as a literal for security e.g use an @
             Debug.WriteLine(sql);
             DBResult = DBConnector.pollDB(sql);
-            Debug.WriteLine(DBResult.HasRows);
             if (DBResult.HasRows) 
             {
 
@@ -54,23 +56,37 @@ namespace NHolbrook_c969_Software_2
                 DBResult = DBConnector.pollDB(sql);
                 if (DBResult.HasRows)
                 {
-//                    MessageBox.Show("Login Successful");
+                    //                    MessageBox.Show("Login Successful");
+                    App.currentUser = submittedUsername;
                     Main main = new Main();
                     main.Show();
                   //  this.Close();
                    
                     
-                } else
+                } else //future self - this should have been a callable function for DRY code, should not have repeated this code
                 {
-                    MessageBox.Show("Incorrect Password");
+                    String erroniousCredsSpan = "Combinación incorrecta de contraseña de nombre de usuario";
+                    String erroniousCredsEng = "Incorrect Username Password Combination";
+                    if (CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "es")
+                    {
+
+                        MessageBox.Show(erroniousCredsSpan);
+
+                    }
+                    else { MessageBox.Show(erroniousCredsEng); }
                 }
             }
             else
             {
-               // Debug.WriteLine(DBResult.GetValue();
+                String erroniousCredsSpan = "Combinación incorrecta de contraseña de nombre de usuario";
+                String erroniousCredsEng = "Incorrect Username Password Combination";
+                if (CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "es")
+                {
 
-                MessageBox.Show(alertUserName);
+                    MessageBox.Show(erroniousCredsSpan);
 
+                }
+                else { MessageBox.Show(erroniousCredsEng); }
             }
             //nested if else to check that username exists and if password is correct
 
@@ -99,6 +115,9 @@ namespace NHolbrook_c969_Software_2
                     passwordLabel.Text = "Contraseña";
                     alertUserName = "Nombre de usuario no encontrado";
                     alertPassword = "Contraseña incorrecta";
+                    loginButton.Text = "Iniciar sesión";
+                    exitButton.Text = "Salida";
+                    
                 }
 
 
