@@ -91,7 +91,7 @@ namespace NHolbrook_c969_Software_2
             //nested if else to check that username exists and if password is correct
 
 
-
+            this.Hide();
 
 
         }

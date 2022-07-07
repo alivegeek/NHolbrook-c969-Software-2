@@ -30,7 +30,30 @@ namespace NHolbrook_c969_Software_2
         }
         public static int GetCityID(Customer customer)
         {
-            return 0;
+
+           
+            //make query
+            string sql = "SELECT * FROM client_schedule.address";
+
+            //DBConnector.ExecuteSQL(sql);
+
+            MySqlDataReader DBResult = DBConnector.pollDB(sql);
+
+            if (DBResult.HasRows)
+            {
+                //DBResult.Read();
+                foreach (var x in DBResult)
+                {
+                    if (Convert.ToInt32(DBResult.GetValue(4)) == customer.AddressID)
+                    {
+                        return Convert.ToInt32(DBResult.GetValue(4));
+                    }
+
+                }
+
+            }
+
+            return 1;
         }
 
         //public static int GetAddressID(Customer customer)
@@ -40,7 +63,30 @@ namespace NHolbrook_c969_Software_2
 
         public static int GetCountryID(Customer customer)
         {
-            return 0;
+            String sql = "SELECT countryId, country FROM client_schedule.country";
+            MySqlDataReader results = DBConnector.pollDB(sql);
+            if (results.HasRows)
+            {
+                foreach (var row in results)
+                {
+                    try
+                    {
+                        String dbCountry = (string)results.GetValue(1);
+                        String parmCountry = customer.Country;
+                        if (String.IsNullOrEmpty(dbCountry) || String.IsNullOrEmpty(parmCountry)) { return 9999; } else {
+                             parmCountry.ToUpper();
+                            dbCountry.ToUpper();
+
+                            if (dbCountry == parmCountry)
+                            {
+                                Debug.WriteLine(results.GetValue(0));
+                                return Convert.ToInt32(results.GetValue(0));
+                            }
+                        } }
+                    catch { }
+                }
+            }
+            return 999999;
         }
 
         public static void RemoveAllCustList()
@@ -161,6 +207,7 @@ namespace NHolbrook_c969_Software_2
             }
         }
 
+
         public static int AddAddress(Customer customer)
         {
             string address = customer.Address1.ToUpper();
@@ -178,8 +225,9 @@ namespace NHolbrook_c969_Software_2
                         return Convert.ToInt32(DBResult[0]);
                     }
                     else { 
-                        sql = "INSERT INTO client_schedule.address ( address, address2, cityId, postalcode, phone, createDate, createdBy, lastUpdate, lastUpdateBy) " +
-                            $"VALUES (@address1, @address2, 1, @zip, @phone, @timeNow, @currentUser, @timeNow, @currentUser)";
+                        sql = $"INSERT INTO client_schedule.address ( address, address2, cityId, postalcode, phone, createDate, createdBy, lastUpdate, lastUpdateBy) " +
+                            $"VALUES (@address1, @address2, {customer.CityID}, @zip, @phone, @timeNow, @currentUser, @timeNow, @currentUser)";
+                       
                         var conn = DBConnector.NewSqlConnection();
 
                        
@@ -214,12 +262,30 @@ namespace NHolbrook_c969_Software_2
             return 9999;
         }
 
+        public static void delCustomerFromList(Customer customer)
+        {
+            allCustomers.Remove(customer);
+        }
+
+        public static Customer LookupCustomer(int customerID)
+        {
+            foreach (var obj in allCustomers)
+            {
+                if (obj.CustomerID == customerID)
+                {
+                    return obj;
+                } 
+            }
+            return null;
+        }
         public static int GetAddressID(string address)
         {
             address = address.ToUpper();
             //make query
             string sql = "SELECT * FROM client_schedule.address";
-
+          
+            //DBConnector.ExecuteSQL(sql);
+           
             MySqlDataReader DBResult = DBConnector.pollDB(sql);
 
             if (DBResult.HasRows)

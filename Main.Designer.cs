@@ -92,18 +92,20 @@ namespace NHolbrook_c969_Software_2
             // viewSelectorLabel
             // 
             this.viewSelectorLabel.AutoSize = true;
-            this.viewSelectorLabel.Location = new System.Drawing.Point(721, 17);
+            this.viewSelectorLabel.Location = new System.Drawing.Point(961, 21);
+            this.viewSelectorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.viewSelectorLabel.Name = "viewSelectorLabel";
-            this.viewSelectorLabel.Size = new System.Drawing.Size(93, 13);
+            this.viewSelectorLabel.Size = new System.Drawing.Size(122, 17);
             this.viewSelectorLabel.TabIndex = 1;
             this.viewSelectorLabel.Text = "View Calendar By:";
             // 
             // radioWeek
             // 
             this.radioWeek.AutoSize = true;
-            this.radioWeek.Location = new System.Drawing.Point(837, 15);
+            this.radioWeek.Location = new System.Drawing.Point(1116, 18);
+            this.radioWeek.Margin = new System.Windows.Forms.Padding(4);
             this.radioWeek.Name = "radioWeek";
-            this.radioWeek.Size = new System.Drawing.Size(54, 17);
+            this.radioWeek.Size = new System.Drawing.Size(65, 21);
             this.radioWeek.TabIndex = 2;
             this.radioWeek.TabStop = true;
             this.radioWeek.Text = "Week";
@@ -112,9 +114,10 @@ namespace NHolbrook_c969_Software_2
             // radioMonth
             // 
             this.radioMonth.AutoSize = true;
-            this.radioMonth.Location = new System.Drawing.Point(897, 15);
+            this.radioMonth.Location = new System.Drawing.Point(1196, 18);
+            this.radioMonth.Margin = new System.Windows.Forms.Padding(4);
             this.radioMonth.Name = "radioMonth";
-            this.radioMonth.Size = new System.Drawing.Size(55, 17);
+            this.radioMonth.Size = new System.Drawing.Size(68, 21);
             this.radioMonth.TabIndex = 3;
             this.radioMonth.TabStop = true;
             this.radioMonth.Text = "Month";
@@ -123,9 +126,10 @@ namespace NHolbrook_c969_Software_2
             // radioAll
             // 
             this.radioAll.AutoSize = true;
-            this.radioAll.Location = new System.Drawing.Point(958, 15);
+            this.radioAll.Location = new System.Drawing.Point(1277, 18);
+            this.radioAll.Margin = new System.Windows.Forms.Padding(4);
             this.radioAll.Name = "radioAll";
-            this.radioAll.Size = new System.Drawing.Size(36, 17);
+            this.radioAll.Size = new System.Drawing.Size(44, 21);
             this.radioAll.TabIndex = 4;
             this.radioAll.TabStop = true;
             this.radioAll.Text = "All";
@@ -159,12 +163,13 @@ namespace NHolbrook_c969_Software_2
             this.lastUpdateDataGridViewTextBoxColumn,
             this.lastUpdatedByDataGridViewTextBoxColumn});
             this.apptsDGV.DataSource = this.appointmentsBindingSource;
-            this.apptsDGV.Location = new System.Drawing.Point(6, 43);
+            this.apptsDGV.Location = new System.Drawing.Point(8, 53);
+            this.apptsDGV.Margin = new System.Windows.Forms.Padding(4);
             this.apptsDGV.MultiSelect = false;
             this.apptsDGV.Name = "apptsDGV";
             this.apptsDGV.ReadOnly = true;
             this.apptsDGV.RowHeadersWidth = 51;
-            this.apptsDGV.Size = new System.Drawing.Size(988, 284);
+            this.apptsDGV.Size = new System.Drawing.Size(1317, 350);
             this.apptsDGV.TabIndex = 5;
             // 
             // appointmentIDDataGridViewTextBoxColumn
@@ -174,7 +179,7 @@ namespace NHolbrook_c969_Software_2
             this.appointmentIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.appointmentIDDataGridViewTextBoxColumn.Name = "appointmentIDDataGridViewTextBoxColumn";
             this.appointmentIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.appointmentIDDataGridViewTextBoxColumn.Width = 102;
+            this.appointmentIDDataGridViewTextBoxColumn.Width = 129;
             // 
             // customerIdDataGridViewTextBoxColumn
             // 
@@ -183,7 +188,7 @@ namespace NHolbrook_c969_Software_2
             this.customerIdDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.customerIdDataGridViewTextBoxColumn.Name = "customerIdDataGridViewTextBoxColumn";
             this.customerIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.customerIdDataGridViewTextBoxColumn.Width = 85;
+            this.customerIdDataGridViewTextBoxColumn.Width = 108;
             // 
             // userIdDataGridViewTextBoxColumn
             // 
@@ -192,7 +197,7 @@ namespace NHolbrook_c969_Software_2
             this.userIdDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
             this.userIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.userIdDataGridViewTextBoxColumn.Width = 63;
+            this.userIdDataGridViewTextBoxColumn.Width = 78;
             // 
             // titleDataGridViewTextBoxColumn
             // 
@@ -201,7 +206,7 @@ namespace NHolbrook_c969_Software_2
             this.titleDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
             this.titleDataGridViewTextBoxColumn.ReadOnly = true;
-            this.titleDataGridViewTextBoxColumn.Width = 52;
+            this.titleDataGridViewTextBoxColumn.Width = 64;
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
@@ -210,7 +215,7 @@ namespace NHolbrook_c969_Software_2
             this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descriptionDataGridViewTextBoxColumn.Width = 85;
+            this.descriptionDataGridViewTextBoxColumn.Width = 108;
             // 
             // locationDataGridViewTextBoxColumn
             // 
@@ -219,7 +224,7 @@ namespace NHolbrook_c969_Software_2
             this.locationDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
             this.locationDataGridViewTextBoxColumn.ReadOnly = true;
-            this.locationDataGridViewTextBoxColumn.Width = 73;
+            this.locationDataGridViewTextBoxColumn.Width = 91;
             // 
             // contactDataGridViewTextBoxColumn
             // 
@@ -228,7 +233,7 @@ namespace NHolbrook_c969_Software_2
             this.contactDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.contactDataGridViewTextBoxColumn.Name = "contactDataGridViewTextBoxColumn";
             this.contactDataGridViewTextBoxColumn.ReadOnly = true;
-            this.contactDataGridViewTextBoxColumn.Width = 69;
+            this.contactDataGridViewTextBoxColumn.Width = 85;
             // 
             // typeDataGridViewTextBoxColumn
             // 
@@ -237,7 +242,7 @@ namespace NHolbrook_c969_Software_2
             this.typeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
             this.typeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.typeDataGridViewTextBoxColumn.Width = 56;
+            this.typeDataGridViewTextBoxColumn.Width = 69;
             // 
             // urlDataGridViewTextBoxColumn
             // 
@@ -246,7 +251,7 @@ namespace NHolbrook_c969_Software_2
             this.urlDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.urlDataGridViewTextBoxColumn.Name = "urlDataGridViewTextBoxColumn";
             this.urlDataGridViewTextBoxColumn.ReadOnly = true;
-            this.urlDataGridViewTextBoxColumn.Width = 45;
+            this.urlDataGridViewTextBoxColumn.Width = 55;
             // 
             // startTimeDataGridViewTextBoxColumn
             // 
@@ -255,7 +260,7 @@ namespace NHolbrook_c969_Software_2
             this.startTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.startTimeDataGridViewTextBoxColumn.Name = "startTimeDataGridViewTextBoxColumn";
             this.startTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.startTimeDataGridViewTextBoxColumn.Width = 77;
+            this.startTimeDataGridViewTextBoxColumn.Width = 98;
             // 
             // endTimeDataGridViewTextBoxColumn
             // 
@@ -264,7 +269,7 @@ namespace NHolbrook_c969_Software_2
             this.endTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.endTimeDataGridViewTextBoxColumn.Name = "endTimeDataGridViewTextBoxColumn";
             this.endTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.endTimeDataGridViewTextBoxColumn.Width = 74;
+            this.endTimeDataGridViewTextBoxColumn.Width = 93;
             // 
             // createDateDataGridViewTextBoxColumn
             // 
@@ -273,7 +278,7 @@ namespace NHolbrook_c969_Software_2
             this.createDateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.createDateDataGridViewTextBoxColumn.Name = "createDateDataGridViewTextBoxColumn";
             this.createDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.createDateDataGridViewTextBoxColumn.Width = 86;
+            this.createDateDataGridViewTextBoxColumn.Width = 109;
             // 
             // createdByDataGridViewTextBoxColumn
             // 
@@ -282,7 +287,7 @@ namespace NHolbrook_c969_Software_2
             this.createdByDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.createdByDataGridViewTextBoxColumn.Name = "createdByDataGridViewTextBoxColumn";
             this.createdByDataGridViewTextBoxColumn.ReadOnly = true;
-            this.createdByDataGridViewTextBoxColumn.Width = 81;
+            this.createdByDataGridViewTextBoxColumn.Width = 103;
             // 
             // lastUpdateDataGridViewTextBoxColumn
             // 
@@ -291,7 +296,7 @@ namespace NHolbrook_c969_Software_2
             this.lastUpdateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.lastUpdateDataGridViewTextBoxColumn.Name = "lastUpdateDataGridViewTextBoxColumn";
             this.lastUpdateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lastUpdateDataGridViewTextBoxColumn.Width = 87;
+            this.lastUpdateDataGridViewTextBoxColumn.Width = 110;
             // 
             // lastUpdatedByDataGridViewTextBoxColumn
             // 
@@ -300,7 +305,7 @@ namespace NHolbrook_c969_Software_2
             this.lastUpdatedByDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.lastUpdatedByDataGridViewTextBoxColumn.Name = "lastUpdatedByDataGridViewTextBoxColumn";
             this.lastUpdatedByDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lastUpdatedByDataGridViewTextBoxColumn.Width = 105;
+            this.lastUpdatedByDataGridViewTextBoxColumn.Width = 134;
             // 
             // appointmentsBindingSource
             // 
@@ -308,9 +313,10 @@ namespace NHolbrook_c969_Software_2
             // 
             // buttonAddCust
             // 
-            this.buttonAddCust.Location = new System.Drawing.Point(773, 14);
+            this.buttonAddCust.Location = new System.Drawing.Point(1031, 17);
+            this.buttonAddCust.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddCust.Name = "buttonAddCust";
-            this.buttonAddCust.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddCust.Size = new System.Drawing.Size(100, 28);
             this.buttonAddCust.TabIndex = 8;
             this.buttonAddCust.Text = "Add";
             this.buttonAddCust.UseVisualStyleBackColor = true;
@@ -318,39 +324,46 @@ namespace NHolbrook_c969_Software_2
             // 
             // buttonModCustomer
             // 
-            this.buttonModCustomer.Location = new System.Drawing.Point(773, 43);
+            this.buttonModCustomer.Location = new System.Drawing.Point(1031, 53);
+            this.buttonModCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.buttonModCustomer.Name = "buttonModCustomer";
-            this.buttonModCustomer.Size = new System.Drawing.Size(75, 23);
+            this.buttonModCustomer.Size = new System.Drawing.Size(100, 28);
             this.buttonModCustomer.TabIndex = 9;
             this.buttonModCustomer.Text = "Modify";
             this.buttonModCustomer.UseVisualStyleBackColor = true;
+            this.buttonModCustomer.Click += new System.EventHandler(this.buttonModCustomer_Click);
             // 
             // buttonDelCustomer
             // 
-            this.buttonDelCustomer.Location = new System.Drawing.Point(773, 72);
+            this.buttonDelCustomer.Location = new System.Drawing.Point(1031, 89);
+            this.buttonDelCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDelCustomer.Name = "buttonDelCustomer";
-            this.buttonDelCustomer.Size = new System.Drawing.Size(75, 23);
+            this.buttonDelCustomer.Size = new System.Drawing.Size(100, 28);
             this.buttonDelCustomer.TabIndex = 10;
             this.buttonDelCustomer.Text = "Delete";
             this.buttonDelCustomer.UseVisualStyleBackColor = true;
+            this.buttonDelCustomer.Click += new System.EventHandler(this.buttonDelCustomer_Click);
             // 
             // bttnConsultantSched
             // 
-            this.bttnConsultantSched.Location = new System.Drawing.Point(10, 28);
+            this.bttnConsultantSched.Location = new System.Drawing.Point(13, 34);
+            this.bttnConsultantSched.Margin = new System.Windows.Forms.Padding(4);
             this.bttnConsultantSched.Name = "bttnConsultantSched";
-            this.bttnConsultantSched.Size = new System.Drawing.Size(203, 52);
+            this.bttnConsultantSched.Size = new System.Drawing.Size(271, 64);
             this.bttnConsultantSched.TabIndex = 11;
             this.bttnConsultantSched.Text = "Consultant Schedule";
             this.bttnConsultantSched.UseVisualStyleBackColor = true;
             // 
             // Exit
             // 
-            this.Exit.Location = new System.Drawing.Point(1003, 589);
+            this.Exit.Location = new System.Drawing.Point(1337, 725);
+            this.Exit.Margin = new System.Windows.Forms.Padding(4);
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(93, 39);
+            this.Exit.Size = new System.Drawing.Size(124, 48);
             this.Exit.TabIndex = 14;
             this.Exit.Text = "Exit";
             this.Exit.UseVisualStyleBackColor = true;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // customerList
             // 
@@ -358,9 +371,11 @@ namespace NHolbrook_c969_Software_2
             this.customerList.Controls.Add(this.buttonAddCust);
             this.customerList.Controls.Add(this.buttonDelCustomer);
             this.customerList.Controls.Add(this.buttonModCustomer);
-            this.customerList.Location = new System.Drawing.Point(21, 351);
+            this.customerList.Location = new System.Drawing.Point(28, 432);
+            this.customerList.Margin = new System.Windows.Forms.Padding(4);
             this.customerList.Name = "customerList";
-            this.customerList.Size = new System.Drawing.Size(854, 277);
+            this.customerList.Padding = new System.Windows.Forms.Padding(4);
+            this.customerList.Size = new System.Drawing.Size(1139, 341);
             this.customerList.TabIndex = 15;
             this.customerList.TabStop = false;
             this.customerList.Text = "Customers";
@@ -379,20 +394,21 @@ namespace NHolbrook_c969_Software_2
             this.customerNameDataGridViewTextBoxColumn,
             this.lastUpdateDataGridViewTextBoxColumn1});
             this.customerDGV.DataSource = this.customerBindingSource;
-            this.customerDGV.Location = new System.Drawing.Point(6, 14);
-            this.customerDGV.Margin = new System.Windows.Forms.Padding(2);
+            this.customerDGV.Location = new System.Drawing.Point(8, 17);
+            this.customerDGV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.customerDGV.MultiSelect = false;
             this.customerDGV.Name = "customerDGV";
             this.customerDGV.ReadOnly = true;
             this.customerDGV.RowHeadersWidth = 51;
             this.customerDGV.RowTemplate.Height = 24;
-            this.customerDGV.Size = new System.Drawing.Size(762, 258);
+            this.customerDGV.Size = new System.Drawing.Size(1016, 318);
             this.customerDGV.TabIndex = 0;
             // 
             // customerIDDataGridViewTextBoxColumn1
             // 
             this.customerIDDataGridViewTextBoxColumn1.DataPropertyName = "CustomerID";
             this.customerIDDataGridViewTextBoxColumn1.HeaderText = "CustomerID";
+            this.customerIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.customerIDDataGridViewTextBoxColumn1.Name = "customerIDDataGridViewTextBoxColumn1";
             this.customerIDDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
@@ -400,6 +416,7 @@ namespace NHolbrook_c969_Software_2
             // 
             this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
             this.customerNameDataGridViewTextBoxColumn.HeaderText = "CustomerName";
+            this.customerNameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
             this.customerNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -407,6 +424,7 @@ namespace NHolbrook_c969_Software_2
             // 
             this.lastUpdateDataGridViewTextBoxColumn1.DataPropertyName = "LastUpdate";
             this.lastUpdateDataGridViewTextBoxColumn1.HeaderText = "LastUpdate";
+            this.lastUpdateDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.lastUpdateDataGridViewTextBoxColumn1.Name = "lastUpdateDataGridViewTextBoxColumn1";
             this.lastUpdateDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
@@ -426,36 +444,41 @@ namespace NHolbrook_c969_Software_2
             this.groupBox1.Controls.Add(this.radioMonth);
             this.groupBox1.Controls.Add(this.groupReports);
             this.groupBox1.Controls.Add(this.radioAll);
-            this.groupBox1.Location = new System.Drawing.Point(21, 12);
+            this.groupBox1.Location = new System.Drawing.Point(28, 15);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1087, 616);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(1450, 758);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Appointments";
             // 
             // buttonDeleteAppts
             // 
-            this.buttonDeleteAppts.Location = new System.Drawing.Point(998, 102);
+            this.buttonDeleteAppts.Location = new System.Drawing.Point(1331, 126);
+            this.buttonDeleteAppts.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDeleteAppts.Name = "buttonDeleteAppts";
-            this.buttonDeleteAppts.Size = new System.Drawing.Size(75, 23);
+            this.buttonDeleteAppts.Size = new System.Drawing.Size(100, 28);
             this.buttonDeleteAppts.TabIndex = 19;
             this.buttonDeleteAppts.Text = "Delete";
             this.buttonDeleteAppts.UseVisualStyleBackColor = true;
             // 
             // buttonModifyAppts
             // 
-            this.buttonModifyAppts.Location = new System.Drawing.Point(1000, 73);
+            this.buttonModifyAppts.Location = new System.Drawing.Point(1333, 90);
+            this.buttonModifyAppts.Margin = new System.Windows.Forms.Padding(4);
             this.buttonModifyAppts.Name = "buttonModifyAppts";
-            this.buttonModifyAppts.Size = new System.Drawing.Size(75, 23);
+            this.buttonModifyAppts.Size = new System.Drawing.Size(100, 28);
             this.buttonModifyAppts.TabIndex = 18;
             this.buttonModifyAppts.Text = "Modify";
             this.buttonModifyAppts.UseVisualStyleBackColor = true;
             // 
             // addAppointmentsButton
             // 
-            this.addAppointmentsButton.Location = new System.Drawing.Point(1000, 44);
+            this.addAppointmentsButton.Location = new System.Drawing.Point(1333, 54);
+            this.addAppointmentsButton.Margin = new System.Windows.Forms.Padding(4);
             this.addAppointmentsButton.Name = "addAppointmentsButton";
-            this.addAppointmentsButton.Size = new System.Drawing.Size(75, 23);
+            this.addAppointmentsButton.Size = new System.Drawing.Size(100, 28);
             this.addAppointmentsButton.TabIndex = 17;
             this.addAppointmentsButton.Text = "Add";
             this.addAppointmentsButton.UseVisualStyleBackColor = true;
@@ -465,36 +488,41 @@ namespace NHolbrook_c969_Software_2
             this.groupReports.Controls.Add(this.button6);
             this.groupReports.Controls.Add(this.bttnConsultantSched);
             this.groupReports.Controls.Add(this.bttnAppByMonth);
-            this.groupReports.Location = new System.Drawing.Point(860, 339);
+            this.groupReports.Location = new System.Drawing.Point(1147, 417);
+            this.groupReports.Margin = new System.Windows.Forms.Padding(4);
             this.groupReports.Name = "groupReports";
-            this.groupReports.Size = new System.Drawing.Size(221, 207);
+            this.groupReports.Padding = new System.Windows.Forms.Padding(4);
+            this.groupReports.Size = new System.Drawing.Size(295, 255);
             this.groupReports.TabIndex = 0;
             this.groupReports.TabStop = false;
             this.groupReports.Text = "Reports";
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(10, 144);
+            this.button6.Location = new System.Drawing.Point(13, 177);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(203, 52);
+            this.button6.Size = new System.Drawing.Size(271, 64);
             this.button6.TabIndex = 18;
             this.button6.Text = "Time Card";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // bttnAppByMonth
             // 
-            this.bttnAppByMonth.Location = new System.Drawing.Point(10, 86);
+            this.bttnAppByMonth.Location = new System.Drawing.Point(13, 106);
+            this.bttnAppByMonth.Margin = new System.Windows.Forms.Padding(4);
             this.bttnAppByMonth.Name = "bttnAppByMonth";
-            this.bttnAppByMonth.Size = new System.Drawing.Size(203, 52);
+            this.bttnAppByMonth.Size = new System.Drawing.Size(271, 64);
             this.bttnAppByMonth.TabIndex = 17;
             this.bttnAppByMonth.Text = "Appt By Month";
             this.bttnAppByMonth.UseVisualStyleBackColor = true;
             // 
             // bttnLogOut
             // 
-            this.bttnLogOut.Location = new System.Drawing.Point(891, 589);
+            this.bttnLogOut.Location = new System.Drawing.Point(1188, 725);
+            this.bttnLogOut.Margin = new System.Windows.Forms.Padding(4);
             this.bttnLogOut.Name = "bttnLogOut";
-            this.bttnLogOut.Size = new System.Drawing.Size(93, 39);
+            this.bttnLogOut.Size = new System.Drawing.Size(124, 48);
             this.bttnLogOut.TabIndex = 17;
             this.bttnLogOut.Text = "Log Out";
             this.bttnLogOut.UseVisualStyleBackColor = true;
@@ -521,13 +549,14 @@ namespace NHolbrook_c969_Software_2
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1114, 638);
+            this.ClientSize = new System.Drawing.Size(1485, 785);
             this.Controls.Add(this.bttnLogOut);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.customerList);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
@@ -573,7 +602,6 @@ namespace NHolbrook_c969_Software_2
         private System.Windows.Forms.BindingSource customerBindingSource;
         private System.Windows.Forms.BindingSource customerBindingSource1;
         private System.Windows.Forms.BindingSource customerBindingSource2;
-        private System.Windows.Forms.DataGridView customerDGV;
         private System.Windows.Forms.BindingSource customerBindingSource3;
         private System.Windows.Forms.BindingSource customerBindingSource4;
         private System.Windows.Forms.BindingSource appointmentsBindingSource;
@@ -593,6 +621,7 @@ namespace NHolbrook_c969_Software_2
         private System.Windows.Forms.DataGridViewTextBoxColumn createdByDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastUpdateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastUpdatedByDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView customerDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastUpdateDataGridViewTextBoxColumn1;

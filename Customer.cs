@@ -10,7 +10,7 @@ namespace NHolbrook_c969_Software_2
 
 
         public String CustomerName { get; set; }
-        int AddressID { get; set; }
+        public int AddressID { get; set; }
 
         public Boolean Active { get; set; }
         DateTime CreateDate { get; set; }
@@ -29,6 +29,9 @@ namespace NHolbrook_c969_Software_2
         public string Country { get; set; }
 
         public string Phone { get; set; }
+
+        public int CityID { get; set; }
+
 
         //contructor/s
         public Customer(int customerID, string customerName, int addressID, bool active, DateTime createDate, string createdBy, DateTime lastUpdate, string lastUpdatedBy){

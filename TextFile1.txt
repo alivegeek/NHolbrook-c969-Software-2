@@ -10,3 +10,9 @@ Need functions for Address ID
 
 
 //to do, add logic for getting city ID or adding city to database.  Check the rubric here, maybe users cant add city just pick one?
+
+// added ability to get city id on new customer submission to do create required text boxes and input validation on form.
+
+// added validation for zip and phone todo validation for name address
+
+7-6 added modify customer functionality ToDo: test it then move on
