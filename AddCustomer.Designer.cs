@@ -48,26 +48,28 @@ namespace NHolbrook_c969_Software_2
             this.labelAddress1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBoxCity = new System.Windows.Forms.ComboBox();
+            this.labelCustID = new System.Windows.Forms.Label();
+            this.inputCustomerID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelAddCustomer
             // 
             this.labelAddCustomer.AutoSize = true;
             this.labelAddCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddCustomer.Location = new System.Drawing.Point(213, 47);
-            this.labelAddCustomer.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelAddCustomer.Location = new System.Drawing.Point(142, 30);
+            this.labelAddCustomer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelAddCustomer.Name = "labelAddCustomer";
-            this.labelAddCustomer.Size = new System.Drawing.Size(298, 48);
+            this.labelAddCustomer.Size = new System.Drawing.Size(199, 31);
             this.labelAddCustomer.TabIndex = 0;
             this.labelAddCustomer.Text = "Add Customer";
             // 
             // inputName
             // 
             this.inputName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputName.Location = new System.Drawing.Point(285, 150);
-            this.inputName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.inputName.Location = new System.Drawing.Point(190, 96);
+            this.inputName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.inputName.Name = "inputName";
-            this.inputName.Size = new System.Drawing.Size(430, 41);
+            this.inputName.Size = new System.Drawing.Size(288, 29);
             this.inputName.TabIndex = 1;
             this.inputName.TextChanged += new System.EventHandler(this.inputName_TextChanged);
             this.inputName.Validating += new System.ComponentModel.CancelEventHandler(this.inputName_Validating);
@@ -75,29 +77,29 @@ namespace NHolbrook_c969_Software_2
             // inputAddress1
             // 
             this.inputAddress1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputAddress1.Location = new System.Drawing.Point(285, 208);
-            this.inputAddress1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.inputAddress1.Location = new System.Drawing.Point(190, 133);
+            this.inputAddress1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.inputAddress1.Name = "inputAddress1";
-            this.inputAddress1.Size = new System.Drawing.Size(430, 41);
+            this.inputAddress1.Size = new System.Drawing.Size(288, 29);
             this.inputAddress1.TabIndex = 2;
             this.inputAddress1.Validating += new System.ComponentModel.CancelEventHandler(this.inputAddress1_Validating);
             // 
             // inputAddress2
             // 
             this.inputAddress2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputAddress2.Location = new System.Drawing.Point(285, 266);
-            this.inputAddress2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.inputAddress2.Location = new System.Drawing.Point(190, 170);
+            this.inputAddress2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.inputAddress2.Name = "inputAddress2";
-            this.inputAddress2.Size = new System.Drawing.Size(430, 41);
+            this.inputAddress2.Size = new System.Drawing.Size(288, 29);
             this.inputAddress2.TabIndex = 3;
             // 
             // inputZip
             // 
             this.inputZip.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputZip.Location = new System.Drawing.Point(285, 381);
-            this.inputZip.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.inputZip.Location = new System.Drawing.Point(190, 244);
+            this.inputZip.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.inputZip.Name = "inputZip";
-            this.inputZip.Size = new System.Drawing.Size(430, 41);
+            this.inputZip.Size = new System.Drawing.Size(288, 29);
             this.inputZip.TabIndex = 5;
             this.inputZip.TextChanged += new System.EventHandler(this.inputZip_TextChanged);
             this.inputZip.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputZip_KeyPress);
@@ -106,10 +108,10 @@ namespace NHolbrook_c969_Software_2
             // textBox7
             // 
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(285, 497);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBox7.Location = new System.Drawing.Point(190, 318);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(430, 41);
+            this.textBox7.Size = new System.Drawing.Size(288, 29);
             this.textBox7.TabIndex = 7;
             this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_KeyPress);
@@ -117,10 +119,10 @@ namespace NHolbrook_c969_Software_2
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(330, 644);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonSave.Location = new System.Drawing.Point(220, 412);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(192, 89);
+            this.buttonSave.Size = new System.Drawing.Size(128, 57);
             this.buttonSave.TabIndex = 10;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -129,10 +131,10 @@ namespace NHolbrook_c969_Software_2
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(534, 644);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonCancel.Location = new System.Drawing.Point(356, 412);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(186, 89);
+            this.buttonCancel.Size = new System.Drawing.Size(124, 57);
             this.buttonCancel.TabIndex = 11;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -143,11 +145,11 @@ namespace NHolbrook_c969_Software_2
             this.checkBoxActiveToggle.AutoSize = true;
             this.checkBoxActiveToggle.Checked = true;
             this.checkBoxActiveToggle.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxActiveToggle.Location = new System.Drawing.Point(608, 569);
-            this.checkBoxActiveToggle.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.checkBoxActiveToggle.Location = new System.Drawing.Point(405, 364);
+            this.checkBoxActiveToggle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBoxActiveToggle.Name = "checkBoxActiveToggle";
             this.checkBoxActiveToggle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxActiveToggle.Size = new System.Drawing.Size(103, 29);
+            this.checkBoxActiveToggle.Size = new System.Drawing.Size(68, 21);
             this.checkBoxActiveToggle.TabIndex = 12;
             this.checkBoxActiveToggle.Text = "Active";
             this.checkBoxActiveToggle.UseVisualStyleBackColor = true;
@@ -156,10 +158,10 @@ namespace NHolbrook_c969_Software_2
             // 
             this.labelCustomer.AutoSize = true;
             this.labelCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCustomer.Location = new System.Drawing.Point(18, 153);
-            this.labelCustomer.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelCustomer.Location = new System.Drawing.Point(12, 98);
+            this.labelCustomer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCustomer.Name = "labelCustomer";
-            this.labelCustomer.Size = new System.Drawing.Size(112, 37);
+            this.labelCustomer.Size = new System.Drawing.Size(70, 25);
             this.labelCustomer.TabIndex = 13;
             this.labelCustomer.Text = "Name:";
             this.labelCustomer.Click += new System.EventHandler(this.labelCustomer_Click);
@@ -168,20 +170,20 @@ namespace NHolbrook_c969_Software_2
             // 
             this.labelActive.AutoSize = true;
             this.labelActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelActive.Location = new System.Drawing.Point(278, 569);
-            this.labelActive.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelActive.Location = new System.Drawing.Point(185, 364);
+            this.labelActive.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelActive.Name = "labelActive";
-            this.labelActive.Size = new System.Drawing.Size(0, 37);
+            this.labelActive.Size = new System.Drawing.Size(0, 25);
             this.labelActive.TabIndex = 14;
             // 
             // labelCountry
             // 
             this.labelCountry.AutoSize = true;
             this.labelCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCountry.Location = new System.Drawing.Point(24, 447);
-            this.labelCountry.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelCountry.Location = new System.Drawing.Point(12, 286);
+            this.labelCountry.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCountry.Name = "labelCountry";
-            this.labelCountry.Size = new System.Drawing.Size(129, 37);
+            this.labelCountry.Size = new System.Drawing.Size(81, 25);
             this.labelCountry.TabIndex = 15;
             this.labelCountry.Text = "Country";
             this.labelCountry.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -190,10 +192,10 @@ namespace NHolbrook_c969_Software_2
             // 
             this.labelPhone.AutoSize = true;
             this.labelPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhone.Location = new System.Drawing.Point(18, 503);
-            this.labelPhone.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelPhone.Location = new System.Drawing.Point(12, 322);
+            this.labelPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(242, 37);
+            this.labelPhone.Size = new System.Drawing.Size(149, 25);
             this.labelPhone.TabIndex = 16;
             this.labelPhone.Text = "Phone Number:";
             // 
@@ -201,10 +203,10 @@ namespace NHolbrook_c969_Software_2
             // 
             this.labelZipcode.AutoSize = true;
             this.labelZipcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelZipcode.Location = new System.Drawing.Point(18, 384);
-            this.labelZipcode.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelZipcode.Location = new System.Drawing.Point(12, 246);
+            this.labelZipcode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelZipcode.Name = "labelZipcode";
-            this.labelZipcode.Size = new System.Drawing.Size(156, 37);
+            this.labelZipcode.Size = new System.Drawing.Size(98, 25);
             this.labelZipcode.TabIndex = 17;
             this.labelZipcode.Text = "Zip Code:";
             // 
@@ -212,10 +214,10 @@ namespace NHolbrook_c969_Software_2
             // 
             this.labelCity.AutoSize = true;
             this.labelCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCity.Location = new System.Drawing.Point(18, 328);
-            this.labelCity.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelCity.Location = new System.Drawing.Point(12, 210);
+            this.labelCity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCity.Name = "labelCity";
-            this.labelCity.Size = new System.Drawing.Size(80, 37);
+            this.labelCity.Size = new System.Drawing.Size(52, 25);
             this.labelCity.TabIndex = 18;
             this.labelCity.Text = "City:";
             // 
@@ -223,10 +225,10 @@ namespace NHolbrook_c969_Software_2
             // 
             this.labelAddress2.AutoSize = true;
             this.labelAddress2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddress2.Location = new System.Drawing.Point(18, 269);
-            this.labelAddress2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelAddress2.Location = new System.Drawing.Point(12, 172);
+            this.labelAddress2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelAddress2.Name = "labelAddress2";
-            this.labelAddress2.Size = new System.Drawing.Size(171, 37);
+            this.labelAddress2.Size = new System.Drawing.Size(107, 25);
             this.labelAddress2.TabIndex = 19;
             this.labelAddress2.Text = "Address 2:";
             // 
@@ -234,20 +236,20 @@ namespace NHolbrook_c969_Software_2
             // 
             this.labelAddress1.AutoSize = true;
             this.labelAddress1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddress1.Location = new System.Drawing.Point(18, 211);
-            this.labelAddress1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelAddress1.Location = new System.Drawing.Point(12, 135);
+            this.labelAddress1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelAddress1.Name = "labelAddress1";
-            this.labelAddress1.Size = new System.Drawing.Size(169, 37);
+            this.labelAddress1.Size = new System.Drawing.Size(107, 25);
             this.labelAddress1.TabIndex = 20;
             this.labelAddress1.Text = "Address 1:";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(284, 447);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.comboBox1.Location = new System.Drawing.Point(189, 286);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(432, 33);
+            this.comboBox1.Size = new System.Drawing.Size(289, 24);
             this.comboBox1.TabIndex = 21;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.comboBox1.Validating += new System.ComponentModel.CancelEventHandler(this.comboBox1_Validating);
@@ -255,19 +257,43 @@ namespace NHolbrook_c969_Software_2
             // comboBoxCity
             // 
             this.comboBoxCity.FormattingEnabled = true;
-            this.comboBoxCity.Location = new System.Drawing.Point(285, 328);
-            this.comboBoxCity.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.comboBoxCity.Location = new System.Drawing.Point(190, 210);
+            this.comboBoxCity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxCity.Name = "comboBoxCity";
-            this.comboBoxCity.Size = new System.Drawing.Size(432, 33);
+            this.comboBoxCity.Size = new System.Drawing.Size(289, 24);
             this.comboBoxCity.TabIndex = 22;
             this.comboBoxCity.SelectedIndexChanged += new System.EventHandler(this.comboBoxCity_SelectedIndexChanged);
             this.comboBoxCity.Validating += new System.ComponentModel.CancelEventHandler(this.comboBoxCity_Validating);
             // 
+            // labelCustID
+            // 
+            this.labelCustID.AutoSize = true;
+            this.labelCustID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCustID.Location = new System.Drawing.Point(16, 364);
+            this.labelCustID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCustID.Name = "labelCustID";
+            this.labelCustID.Size = new System.Drawing.Size(121, 25);
+            this.labelCustID.TabIndex = 23;
+            this.labelCustID.Text = "Customer ID";
+            this.labelCustID.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // inputCustomerID
+            // 
+            this.inputCustomerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputCustomerID.Location = new System.Drawing.Point(189, 360);
+            this.inputCustomerID.Margin = new System.Windows.Forms.Padding(4);
+            this.inputCustomerID.Name = "inputCustomerID";
+            this.inputCustomerID.ReadOnly = true;
+            this.inputCustomerID.Size = new System.Drawing.Size(163, 29);
+            this.inputCustomerID.TabIndex = 24;
+            // 
             // AddCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 791);
+            this.ClientSize = new System.Drawing.Size(509, 506);
+            this.Controls.Add(this.inputCustomerID);
+            this.Controls.Add(this.labelCustID);
             this.Controls.Add(this.comboBoxCity);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.labelAddress1);
@@ -287,7 +313,7 @@ namespace NHolbrook_c969_Software_2
             this.Controls.Add(this.inputAddress1);
             this.Controls.Add(this.inputName);
             this.Controls.Add(this.labelAddCustomer);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddCustomer";
             this.Text = "AddCustomer";
             this.Load += new System.EventHandler(this.AddCustomer_Load_1);
@@ -317,5 +343,7 @@ namespace NHolbrook_c969_Software_2
         public System.Windows.Forms.Label labelAddress1;
         public System.Windows.Forms.ComboBox comboBox1;
         public System.Windows.Forms.ComboBox comboBoxCity;
+        public System.Windows.Forms.Label labelCustID;
+        public System.Windows.Forms.TextBox inputCustomerID;
     }
 }

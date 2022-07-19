@@ -22,6 +22,7 @@ namespace NHolbrook_c969_Software_2
 
         public string Address2 { get; set; }
 
+
         public string City { get; set; }
 
         public int Zip { get; set; }
@@ -32,7 +33,7 @@ namespace NHolbrook_c969_Software_2
 
         public int CityID { get; set; }
 
-
+        
         //contructor/s
         public Customer(int customerID, string customerName, int addressID, bool active, DateTime createDate, string createdBy, DateTime lastUpdate, string lastUpdatedBy){
 
@@ -44,7 +45,8 @@ namespace NHolbrook_c969_Software_2
             CreatedBy = createdBy;
             LastUpdate = lastUpdate;
             LastUpdatedBy = lastUpdatedBy;
-
+           // Address1 = App.GetCustAddress(addressID);
+           // Address1 = App.GetCustAddress2(addressID);
 
         }
         public Customer(string customerName, string address1, string address2, string city, int zipcode, string country, bool active, DateTime createDate, string createdBy, DateTime lastUpdate, string lastUpdatedBy)
@@ -74,6 +76,8 @@ namespace NHolbrook_c969_Software_2
             CreatedBy = createdBy;
             LastUpdate = lastUpdate;
             LastUpdatedBy = lastUpdatedBy;
+           // Address1 = App.GetCustAddress(addressID);
+           // Address2 = App.GetCustAddress2(addressID);
 
 
         }
@@ -127,6 +131,8 @@ namespace NHolbrook_c969_Software_2
                 // Add new customer object to the list of customers for DGV
                 App.AddCustomer(customer);
                 DBConnector.closeConnection();
+                customer.Address1 = App.GetCustAddress(customer.AddressID);
+                customer.Address2 = App.GetCustAddress2(customer.AddressID);
 
             }
 

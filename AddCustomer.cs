@@ -32,35 +32,50 @@ namespace NHolbrook_c969_Software_2
         private void buttonSave_Click(object sender, EventArgs e)
         {
             // create a customer object
-           // int custID = App.GetNewCustomerID();
+            // int custID = App.GetNewCustomerID();
 
 
 
+            if (App.isMod == false)
+            {
 
 
+                Customer customer = new Customer(
+                                                      inputName.Text,
+                                                      comboBox1.SelectedIndex, //future me make this a required field
+                                                      checkBoxActiveToggle.Checked,
+                                                      DateTime.Now,
+                                                      App.currentUser,
+                                                      DateTime.Now,
+                                                      App.currentUser);
+                customer.CityID = comboBoxCity.SelectedIndex;
+                customer.Address1 = inputAddress1.Text;
+                customer.Phone = textBox7.Text;
+                if (customer.Address2 == null)
+                {
+                    customer.Address2 = "";
 
-            Customer customer = new Customer(
-                                                  inputName.Text,
-                                                  comboBox1.SelectedIndex, //future me make this a required field
-                                                  checkBoxActiveToggle.Checked,
-                                                  DateTime.Now,
-                                                  App.currentUser,
-                                                  DateTime.Now,
-                                                  App.currentUser);
-            customer.CityID = comboBoxCity.SelectedIndex;
-            customer.Address1 = inputAddress1.Text;
-            customer.Phone = textBox7.Text;
-            if (customer.Address2 == null) {
-                customer.Address2 = "";
+                }
 
+                //add customer object to list of customers
+                //App.AddCustomer(customer);
+                //write data from customer object to database
+                App.writeCustomerToDB(customer);
+                App.AddCustomer(customer);
+                // Customer.InitFromDB();
             }
-            
-            //add customer object to list of customers
-            //App.AddCustomer(customer);
-            //write data from customer object to database
-            App.writeCustomerToDB(customer);
-            App.AddCustomer(customer);
-           // Customer.InitFromDB();
+            else
+            {
+                Customer customer = App.LookupCustomer(Convert.ToInt32(inputCustomerID.Text));
+                customer.CustomerName = inputName.Text;
+                customer.Address1 = inputAddress1.Text;
+                customer.Address2 = inputAddress2.Text;
+                customer.CityID = comboBoxCity.SelectedIndex;
+                customer.Zip = Convert.ToInt32(inputZip.Text);
+                customer.Phone = textBox7.Text;
+                customer.Active = checkBoxActiveToggle.Checked;
+                //customer.Country = 
+            }
             this.Close();
         }
 
@@ -281,6 +296,11 @@ namespace NHolbrook_c969_Software_2
                 buttonSave.Enabled = true;
 
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -16,3 +16,7 @@ Need functions for Address ID
 // added validation for zip and phone todo validation for name address
 
 7-6 added modify customer functionality ToDo: test it then move on
+
+
+
+7-15 todo: the foreign keys (i think ) need to be updated in the table where they are primary keys. So add in code to do that for userID and customerID. I think it should be two more sql calls when the saved button is clicked. 

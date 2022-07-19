@@ -45,6 +45,7 @@ namespace NHolbrook_c969_Software_2
 
         private void buttonAddCust_Click(object sender, EventArgs e)
         {
+            App.isMod = false;
             // create Addcustomer form and show
             AddCustomer ac = new AddCustomer();
             ac.Show();
@@ -111,7 +112,7 @@ namespace NHolbrook_c969_Software_2
 
         private void buttonModCustomer_Click(object sender, EventArgs e)
         {
-
+            App.isMod = true;
             //Create form object
             AddCustomer ac = new AddCustomer();
 
@@ -132,10 +133,11 @@ namespace NHolbrook_c969_Software_2
             ac.comboBoxCity.DataSource = bs2;
             ac.comboBoxCity.DisplayMember = "Value";
             ac.comboBoxCity.ValueMember = "Key";
-            
+
 
 
             //Populate Form from customer object
+            ac.inputCustomerID.Text = cust.CustomerID.ToString(); ;
             ac.inputName.Text = cust.CustomerName;
             ac.inputAddress1.Text = cust.Address1;
             ac.inputAddress2.Text = cust.Address2;
@@ -155,6 +157,110 @@ namespace NHolbrook_c969_Software_2
             // Set ID to be uneditable 
 
             // SQL Update Statement
+
+        }
+
+        private void addAppointmentsButton_Click(object sender, EventArgs e)
+        {
+            AddAppointment appt = new AddAppointment();
+            App.apptIsMod = false;
+            appt.Show();
+        }
+
+        private void buttonModifyAppts_Click(object sender, EventArgs e)
+        {
+            App.apptIsMod = true;
+            //Create form object
+            //Appointments ap = new Appointments();
+            AddAppointment aa = new AddAppointment();
+            // get ID from DGV
+            DataGridViewRow selectedRow = apptsDGV.SelectedRows[0];
+
+            var apptId = Convert.ToInt32(selectedRow.Cells[0].Value);
+            // Lookup Customer 
+            Appointments appt = App.LookupAppointment(apptId);
+            if (appt.AppointmentID == null)
+            {
+                MessageBox.Show("Error: Customer not found");
+                return;
+            }
+            List<KeyValuePair<int, string>> customerData = App.GetAllCustomers();
+            List<string> typeData = App.GetAllTypes();
+            var bs2 = new BindingSource(typeData, null);
+            var bs = new BindingSource(customerData, null);
+            aa.comboBoxCustomer.DataSource = bs;
+            aa.comboBoxCustomer.DisplayMember = "Value";
+            aa.comboBoxCustomer.ValueMember = "Key";
+      
+   
+            aa.comboBoxType.DataSource = bs2;
+            //comboBoxType.DisplayMember = "Value";
+            //comboBoxType.ValueMember = "Key";
+            bs2.Add("Type1");
+            bs2.Add("Type2");
+            bs2.Add("Type3");
+
+
+            //Populate Form from appt object
+            aa.inputTitle.Text = appt.Title;
+            aa.inputDesc.Text = appt.Description;
+            aa.inputLocation.Text = appt.Location;
+            aa.inputContact.Text = appt.Contact;
+       //     aa.dateTimePickerStart.Value = ap.StartTime;
+       //     aa.dateTimePickerEnd.Value = ap.EndTime;
+            aa.labelApptId.Text = appt.AppointmentID.ToString();
+
+
+
+            // show form
+            aa.Show();
+            // Set ID to be uneditable 
+
+            // SQL Update Statement
+        }
+
+        private void buttonDeleteAppts_Click(object sender, EventArgs e)
+        {
+            Appointments apptToDel = null;
+            var conn = DBConnector.NewSqlConnection();
+            try
+            {
+                DataGridViewRow selectedRow = apptsDGV.SelectedRows[0];
+
+                var apptID = Convert.ToInt32(selectedRow.Cells[0].Value);
+
+                if (MessageBox.Show($"are you sure you want to delete appointment{selectedRow.Cells[0].Value} with title {selectedRow.Cells[3].Value}?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string sql = "DELETE FROM client_schedule.appointment WHERE appointmentId = @appointmentId;";
+
+
+                    using (var cmd = new MySqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.Add("@appointmentId", MySqlDbType.Int32).Value = apptID;
+                        cmd.ExecuteNonQuery();
+                    }
+                    //DBConnector.ExecuteSQL(sql);
+                    conn.Close();
+
+                    foreach (var x in App.allAppts)
+                    {
+                        if (x.AppointmentID == apptID)
+                        {
+                            apptToDel = x;
+
+                        }
+
+                    }
+                    App.delApptFromList(apptToDel);
+
+                }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Please select something to delete.");
+                return;
+            }
+
 
         }
     }    
